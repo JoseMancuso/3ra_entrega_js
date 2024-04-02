@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "MedievalSharp", cursive;
+    list-style: none;
 }
 
 body {
@@ -89,4 +90,8 @@ body h1 {
 #botonEliminar {
     background-color: #c28540;
     margin: 15px;
+}
+
+li {
+    
 }
