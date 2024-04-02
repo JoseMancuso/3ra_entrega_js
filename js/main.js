@@ -270,7 +270,7 @@ function borrarSeleccion() {
 }
 
 function irCarreta() {
-    window.location.href = '../pages/carrito.html';
+    window.location.href = './pages/carrito.html';
 }
 
 const botonCarreta = document.getElementById('boton-carreta');
