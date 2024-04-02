@@ -1,3 +1,4 @@
+// Base de datos de razas, tiers, edades, precios, imágenes //
 const preciosCaballos = {
     razas: {
         "Mustang": 
@@ -96,10 +97,13 @@ const preciosCaballos = {
     }
 };
 
+// Definiciones globales //
 const contenedor = document.querySelector('#opciones');
 let seleccionRaza = "";
 let seleccionTier = "";
 let seleccionEdad = "";
+
+// Funciones de actualización visual de DOM según interacción del usuario //
 
 function cambiarTitulo(mensaje) {
     let titulo = document.getElementById('titulo');
@@ -118,6 +122,8 @@ function ocultarBoton() {
         button.style.display = 'none';
     }
 }
+
+// Funciones para generación de opciones y guardado del producto final //
 
 function crearTarjetasRazas() { 
     for (let nombreRaza in preciosCaballos.razas) {
@@ -231,11 +237,15 @@ function seleccionarEdad(event) {
     crearTarjetaFinal();
 }
 
+// Funcion para boton "iniciar". Pretendo sacarlo para la entrega final.
+
 document.querySelector('#iniciar').addEventListener('click', function() {
     cambiarTitulo("Seleccione la raza del caballo");
     ocultarBoton();
     crearTarjetasRazas();
 });
+
+// Función para guardado de caballo generado en array para carrito y localStorage //
 
 let carreta = JSON.parse(localStorage.getItem('carreta')) || [];
 
@@ -260,6 +270,8 @@ function agregarAlCarrito() {
     crearTarjetasRazas();
 }
 
+// Funcion para descartar el caballo generado y volver a iniciar la calculadora //
+
 function borrarSeleccion() {
     seleccionRaza = "";
     seleccionTier = "";
@@ -268,6 +280,8 @@ function borrarSeleccion() {
     contenedor.innerHTML = "";
     crearTarjetasRazas();
 }
+
+// Función para botón de navegación entre index.html y carrito.html //
 
 function irCarreta() {
     window.location.href = './pages/carrito.html';
